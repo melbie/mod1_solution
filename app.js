@@ -1,15 +1,13 @@
 (function(){
 'use strict';
 angular.module('LunchCheck',[]).
-//controller("LunchCheckController",function($scope){
-//  $scope.name="check";
-//});
 controller("LunchCheckController",LunchCheckController);
+
 LunchCheckController.$inject=['$scope'];
 function LunchCheckController($scope){
 
 $scope.checkIfToomuch= function(){
-  if($scope.menu == null){
+  if($scope.menu == null || $scope.menu.length == 0 ){
     $scope.myObj= {
       "color":"red"
     };
@@ -20,12 +18,14 @@ $scope.checkIfToomuch= function(){
     return;
   }
   var str = ($scope.menu).split(',');
-  var listString=[""];
+  var listString=[];
   var i;
+  var j=0;
   for(i= 0; i<str.length; i++){
-    if(str[i].trim()!=""){
-      listString[i]=str[i];
-    }
+   if( str[i] != ""){
+      listString[j]=str[i];
+      j++;
+   }
   }
   if (listString.length > 3){
     $scope.myObj= {
