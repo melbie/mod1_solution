@@ -22,7 +22,7 @@ $scope.checkIfToomuch= function(){
   var i;
   var j=0;
   for(i= 0; i<str.length; i++){
-   if( str[i] != ""){
+   if( str[i].trim() != ""){
       listString[j]=str[i];
       j++;
    }
