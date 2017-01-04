@@ -19,11 +19,12 @@ $scope.checkIfToomuch= function(){
   }
   var str = ($scope.menu).split(',');
   var listString=[];
-  var i;
+  var i,s;
   var j=0;
   for(i= 0; i<str.length; i++){
-   if( str[i].trim() != ""){
-      listString[j]=str[i];
+    s=str[i].trim();
+   if( s != ""){
+      listString[j]=s;
       j++;
    }
   }
